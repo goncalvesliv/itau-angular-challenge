@@ -1,10 +1,10 @@
 <ul>
     <li *ngFor="let tarefa of tarefasConcluidas">
         <app-task-item [tarefa]="tarefa" [mostrarBotoes]="false">
-</app-task-item>
-</li>
+        </app-task-item>
+    </li>
 </ul>
 
-<div *ngIf="tarefasConcluidas.length === 0">
+<div *ngIf="tarefasConcluidas.length === 0" class="task-not-completed">
     Nenhuma tarefa concluída.
 </div>

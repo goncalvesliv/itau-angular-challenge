@@ -5,64 +5,94 @@
 }
 
 
-.task-item{
-    border-radius: 1rem;
-    border: 0.0625rem solid #CFD1D3;
-    color: black;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem 0;
+.task-item {
+  border-radius: 1rem;
+  border: 0.0625rem solid #CFD1D3;
+  color: black;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
 }
 
-.task-item_btnEdit{
-    background: #ffe100;
+.task-item_btnEdit {
+  background: #ffe100;
 }
 
-.task-item_btnDelete{
-    background: #d8150bda;
+.task-item_btnDelete,
+.task-item_btnConfirm {
+  background: #d8150bda;
 }
 
-.task-item_btnComplete{
-    background: #13a106c8;
+.task-item_btnComplete {
+  background: #13a106c8;
+  min-width: 8rem;
 }
 
-.task-item_btnSave{
-   background-color: #ff6200;
+.task-item_btnSave {
+  background-color: #ff6200;
 }
 
-.task-item_btn{
-    user-select: none;
-    border: 0.0625rem solid transparent;
-    border-radius: 0.75rem;
-    color: #ffff;
-    cursor: pointer;
-    font-weight: 700;
-    min-height: 3.125rem;
-    outline-offset: 0.25rem;
-    padding: 0.625rem calc(1.5rem) - (0.625rem);
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    width: 5rem;
+.task-item_btn {
+  outline-offset: 0.25rem;
+  width: 5rem;
 }
 
-.task-item_buttons{
-    display:flex;
-    gap: 8px;
-    flex-direction: row;
+.task-item_btnText {
+  gap: 0.0625rem;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
 }
 
-.task-item_btnText{
-    gap: 0.0625rem;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+.confirm-delete {
+  background-color: #ffe8e8;
+  border: 1px solid #ffbaba;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.confirm-delete p {
+  margin: 0 0 10px;
+  color: #a94442;
+  font-weight: bold;
+}
+
+.confirm-message {
+  margin-right: 10px;
+}
+
+.task-item_btnCancel {
+  background-color: #6c757d;
+
+}
+
+.task-item_delete-content {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 500px) {
+  .task-item {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .task-item_btn {
+    width: auto;
+    min-height: 2rem;
+  }
+
+  .task-item_content {
+    margin: 20px 0;
+  }
+
+  .task-item_delete-content {
+    flex-direction: column;
+  }
 }

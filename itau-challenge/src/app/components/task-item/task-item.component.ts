@@ -20,9 +20,18 @@ export class TaskItemComponent {
 
   isEditing = false;
   nomeEditado = '';
+  isConfirmingDelete = false;
 
 
-  onDelete(tarefa : Tarefa) {
+  showConfirmDelete() {
+    this.isConfirmingDelete = true;
+  }
+
+  cancelDelete() {
+    this.isConfirmingDelete = false;
+  }
+
+  onDelete(tarefa: Tarefa) {
     this.onDeleteTask.emit(tarefa);
   }
 
@@ -31,7 +40,7 @@ export class TaskItemComponent {
     this.nomeEditado = this.tarefa.name;
   }
 
-    onSave() {
+  onSave() {
     if (this.nomeEditado.trim()) {
       this.tarefa.name = this.nomeEditado.trim();
       this.edit.emit(this.tarefa);
@@ -44,25 +53,25 @@ export class TaskItemComponent {
   }
 
   get dataFormatada(): string {
-  if (!this.tarefa.completionDate) {
-    return ''; // ou algum texto padrão, se preferir
+    if (!this.tarefa.completionDate) {
+      return '';
+    }
+
+    const data = new Date(this.tarefa.completionDate);
+
+    const dataStr = data.toLocaleDateString('pt-BR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+    const horaStr = data.toLocaleTimeString('pt-BR', {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+
+    return `${dataStr} às ${horaStr}`;
   }
-
-  const data = new Date(this.tarefa.completionDate);
-
-  const dataStr = data.toLocaleDateString('pt-BR', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  });
-
-  const horaStr = data.toLocaleTimeString('pt-BR', {
-    hour: '2-digit',
-    minute: '2-digit'
-  });
-
-  return `${dataStr} às ${horaStr}`;
-}
 
 
 }

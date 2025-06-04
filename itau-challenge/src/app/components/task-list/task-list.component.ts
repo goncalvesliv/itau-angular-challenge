@@ -64,17 +64,17 @@ export class TaskListComponent implements OnInit {
 
   toggleConcluido(tarefa: Tarefa) {
     tarefa.isCompleted = !tarefa.isCompleted;
-    tarefa.completionDate = tarefa.isCompleted ? new Date().toISOString() : null;
+    tarefa.completionDate = tarefa.isCompleted ? new Date() : null;
 
     this.taskService.updateTask(tarefa).subscribe();
   }
 
-    get tarefasPendentes() {
-      return this.tarefas.filter(t => !t.isCompleted);
-    }
+  get tarefasPendentes() {
+    return this.tarefas.filter(t => !t.isCompleted);
+  }
 
-    get tarefasConcluidas() {
-      return this.tarefas.filter(t => t.isCompleted);
-    }
+  get tarefasConcluidas() {
+    return this.tarefas.filter(t => t.isCompleted);
+  }
 
 }

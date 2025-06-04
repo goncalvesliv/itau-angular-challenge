@@ -4,42 +4,54 @@
             <span *ngIf="!isEditing" (dblclick)="onEdit()">
                 {{ tarefa.name }}
             </span>
-
-            <input *ngIf="isEditing" [(ngModel)]="nomeEditado" (keyup.enter)="onSave()" class="task-item_input" />
-
+            <div class="task-input-container">
+                <input *ngIf="isEditing" [(ngModel)]="nomeEditado" (keyup.enter)="onSave()"
+                    class="task-item_input task-input" />
+            </div>
             <div *ngIf="isEditing && !nomeEditado.trim()" class="error-message">
                 O nome da tarefa não pode ser vazio.
             </div>
         </div>
 
         <p *ngIf="tarefa.isCompleted">
-        <time 
-            [attr.datetime]="tarefa.completionDate"
-            [attr.aria-label]="'Concluída em ' + dataFormatada">
-            Concluída em: {{ tarefa.completionDate | date:'dd/MM/yyyy HH:mm' }}
-        </time>
+            <time [attr.datetime]="tarefa.completionDate" [attr.aria-label]="'Concluída em ' + dataFormatada">
+                Concluída em: {{ tarefa.completionDate | date:'dd/MM/yyyy HH:mm' }}
+            </time>
         </p>
 
 
+        <div class="task-item_delete-content" *ngIf="isConfirmingDelete; else normalButtons">
+            <p class="confirm-message" role="alert">
+                Tem certeza que deseja excluir essa tarefa?
+            </p>
+            <button (click)="onDelete(tarefa)" class="task-item_btnConfirm task-item_btn task-btn">
+                Sim
+            </button>
+            <button (click)="cancelDelete()" class="task-item_btnCancel task-item_btn task-btn">
+                Não
+            </button>
+        </div>
 
-    <div class="task-item_buttons" *ngIf="mostrarBotoes">
-        <button *ngIf="!isEditing" (click)="onEdit()" class="task-item_btnEdit task-item_btn">
-            Editar
-        </button>
+        <ng-template #normalButtons>
+            <div class="task-item_buttons task-buttons" *ngIf="mostrarBotoes">
+                <button *ngIf="!isEditing" (click)="onEdit()" class="task-item_btnEdit task-item_btn task-btn">
+                    Editar
+                </button>
 
-        <button *ngIf="isEditing" (click)="onSave()" class="task-item_btnSave task-item_btn">
-            Salvar
-        </button>
+                <button *ngIf="isEditing" (click)="onSave()" class="task-item_btnSave task-item_btn task-btn">
+                    Salvar
+                </button>
 
-        <button (click)="onDelete(tarefa)" class="task-item_btnDelete task-item_btn">
-            Excluir
-        </button>
+                <button (click)="showConfirmDelete()" class="task-item_btnDelete task-item_btn task-btn">
+                    Excluir
+                </button>
 
-        <button (click)="onToggle(tarefa)" class="task-item_btnComplete task-item_btn"
-            [disabled]="tarefa.isCompleted">
-            Marcar como Feito
-        </button>
-    </div>
+                <button (click)="onToggle(tarefa)" class="task-item_btnComplete task-item_btn task-btn"
+                    [disabled]="tarefa.isCompleted">
+                    Marcar como Feito
+                </button>
+            </div>
+        </ng-template>
 
     </div>
 </section>

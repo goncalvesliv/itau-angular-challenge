@@ -1,28 +1,22 @@
 {
   "tasks": [
     {
-      "id": "0287",
-      "name": "Treinar com meu namorado",
-      "isCompleted": true,
-      "completionDate": "2025-06-04T02:36:20.088Z"
-    },
-    {
-      "id": "3734",
-      "name": "Ir pro meu namorado",
-      "isCompleted": true,
-      "completionDate": "2025-06-04T02:48:39.050Z"
-    },
-    {
-      "id": "8476",
-      "name": "Terminar to do list",
+      "id": "8729",
+      "name": "Enviar Projeto do Itaú",
       "isCompleted": false,
       "completionDate": null
     },
     {
-      "id": "e847",
-      "name": "teste acessibilidade",
+      "id": "1077",
+      "name": "Estudar",
       "isCompleted": false,
       "completionDate": null
+    },
+    {
+      "id": "3557",
+      "name": "Treinar na Academia",
+      "isCompleted": true,
+      "completionDate": "2025-06-04T16:38:34.998Z"
     }
   ]
 }
