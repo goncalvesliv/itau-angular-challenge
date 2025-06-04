@@ -1,42 +1,56 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Node modules (bibliotecas instaladas)
+node_modules/
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Build output
+dist/
+out-tsc/
+build/
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
-
-# IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
-# System files
-.DS_Store
+# Arquivos temporários do editor e sistema
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.DS_Store
 Thumbs.db
+
+# Angular e TypeScript
+.angular/
+.cache/
+.angular/cache/
+coverage/
+karma-results.xml
+
+# Configuração do editor VSCode
+.vscode/
+
+# Arquivos de ambiente do npm
+package-lock.json
+
+# Arquivos de ambiente de debug
+*.local
+
+# Arquivos específicos do sistema
+*.bak
+*.orig
+
+# Diretórios de cache do npm/yarn/pnpm
+.pnp/
+.pnp.js
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Arquivos temporários do sistema operacional
+*.DS_Store
+Thumbs.db
+
+# Output de testes e coverage
+coverage/
+
+# Angular service worker
+ngsw-worker.js
+ngsw.json
+
