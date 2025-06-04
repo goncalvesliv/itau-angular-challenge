@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": "0287",
+      "name": "Treinar com meu namorado",
+      "isCompleted": true,
+      "completionDate": "2025-06-04T02:36:20.088Z"
+    },
+    {
+      "id": "3734",
+      "name": "Ir pro meu namorado",
+      "isCompleted": true,
+      "completionDate": "2025-06-04T02:48:39.050Z"
+    },
+    {
+      "id": "8476",
+      "name": "Terminar to do list",
+      "isCompleted": false,
+      "completionDate": null
+    },
+    {
+      "id": "e847",
+      "name": "teste acessibilidade",
+      "isCompleted": false,
+      "completionDate": null
+    }
+  ]
+}

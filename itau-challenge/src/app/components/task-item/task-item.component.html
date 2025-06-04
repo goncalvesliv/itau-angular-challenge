@@ -1,0 +1,45 @@
+<section class="task-item_section">
+    <div class="task-item" [class.completed]="tarefa.isCompleted">
+        <div class="task-item_content">
+            <span *ngIf="!isEditing" (dblclick)="onEdit()">
+                {{ tarefa.name }}
+            </span>
+
+            <input *ngIf="isEditing" [(ngModel)]="nomeEditado" (keyup.enter)="onSave()" class="task-item_input" />
+
+            <div *ngIf="isEditing && !nomeEditado.trim()" class="error-message">
+                O nome da tarefa não pode ser vazio.
+            </div>
+        </div>
+
+        <p *ngIf="tarefa.isCompleted">
+        <time 
+            [attr.datetime]="tarefa.completionDate"
+            [attr.aria-label]="'Concluída em ' + dataFormatada">
+            Concluída em: {{ tarefa.completionDate | date:'dd/MM/yyyy HH:mm' }}
+        </time>
+        </p>
+
+
+
+    <div class="task-item_buttons" *ngIf="mostrarBotoes">
+        <button *ngIf="!isEditing" (click)="onEdit()" class="task-item_btnEdit task-item_btn">
+            Editar
+        </button>
+
+        <button *ngIf="isEditing" (click)="onSave()" class="task-item_btnSave task-item_btn">
+            Salvar
+        </button>
+
+        <button (click)="onDelete(tarefa)" class="task-item_btnDelete task-item_btn">
+            Excluir
+        </button>
+
+        <button (click)="onToggle(tarefa)" class="task-item_btnComplete task-item_btn"
+            [disabled]="tarefa.isCompleted">
+            Marcar como Feito
+        </button>
+    </div>
+
+    </div>
+</section>

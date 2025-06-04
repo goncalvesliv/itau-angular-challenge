@@ -1,0 +1,27 @@
+<form (ngSubmit)="addTask()">
+  <div class="task-list_input-section">
+    <div class="task-list_input-container">
+      <input type="text" name="text" class="task-list_input" placeholder="Adicionar Tarefa" id="text"
+        [(ngModel)]="tarefa" />
+    </div>
+
+    <input type="submit" value="Salvar Tarefa" class="task-list_input-btn" />
+  </div>
+</form>
+
+<h2>Tarefas</h2>
+<ul>
+  <li *ngFor="let tarefa of tarefasPendentes">
+    <app-task-item [tarefa]="tarefa" (onDeleteTask)="deleteTask($event)" (edit)="handleEdit($event)"
+      (onToggleConcluido)="toggleConcluido($event)">
+    </app-task-item>
+  </li>
+</ul>
+
+<div *ngIf="tarefasPendentes.length === 0">
+  Nenhuma tarefa pendente.
+</div>
+
+<h2>Tarefas Concluídas</h2>
+<app-completed-tasks [tarefasConcluidas]="tarefasConcluidas">
+</app-completed-tasks>

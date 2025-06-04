@@ -1,0 +1,68 @@
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+
+.task-item{
+    border-radius: 1rem;
+    border: 0.0625rem solid #CFD1D3;
+    color: black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.task-item_btnEdit{
+    background: #ffe100;
+}
+
+.task-item_btnDelete{
+    background: #d8150bda;
+}
+
+.task-item_btnComplete{
+    background: #13a106c8;
+}
+
+.task-item_btnSave{
+   background-color: #ff6200;
+}
+
+.task-item_btn{
+    user-select: none;
+    border: 0.0625rem solid transparent;
+    border-radius: 0.75rem;
+    color: #ffff;
+    cursor: pointer;
+    font-weight: 700;
+    min-height: 3.125rem;
+    outline-offset: 0.25rem;
+    padding: 0.625rem calc(1.5rem) - (0.625rem);
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 5rem;
+}
+
+.task-item_buttons{
+    display:flex;
+    gap: 8px;
+    flex-direction: row;
+}
+
+.task-item_btnText{
+    gap: 0.0625rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}

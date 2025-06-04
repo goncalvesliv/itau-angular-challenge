@@ -1,0 +1,18 @@
+.to-do-container__section{
+    max-width: 1336px;
+    padding: 3rem;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 1rem;
+    border: 0.0625rem solid #CFD1D3;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+.to-do-container__title{
+    font-weight: 700;
+    line-height: 2rem;
+     display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
